@@ -4,6 +4,7 @@ import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, Upload, FileText, X, AlertCircle, Copy, Check, ShieldCheck, Mail, User, Phone, Send, Video, ChevronRight, Sparkles } from "lucide-react";
 import confetti from "canvas-confetti";
+import { supabase } from "@/lib/supabaseClient";
 
 export default function RegistrationForm() {
   const [formData, setFormData] = useState({
@@ -85,7 +86,7 @@ export default function RegistrationForm() {
     setTimeout(() => setCopiedText(null), 2000);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMsg("");
 
@@ -109,12 +110,58 @@ export default function RegistrationForm() {
 
     setIsSubmitting(true);
 
-    // Simulate submission delay
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // 1. Upload screenshot to Supabase Storage (payment-screenshots bucket)
+      const fileExt = screenshot.name.split(".").pop();
+      const fileName = `${Date.now()}-${Math.random().toString(36).substring(2, 15)}.${fileExt}`;
+      const filePath = `receipts/${fileName}`;
+
+      const { error: uploadError } = await supabase.storage
+        .from("payment-screenshots")
+        .upload(filePath, screenshot);
+
+      if (uploadError) {
+        throw new Error(`Screenshot upload failed: ${uploadError.message}`);
+      }
+
+      // 2. Get public URL of the uploaded screenshot
+      const { data: publicUrlData } = supabase.storage
+        .from("payment-screenshots")
+        .getPublicUrl(filePath);
+
+      const screenshotUrl = publicUrlData.publicUrl;
+
+      // 3. Save registration data into Supabase "registrations" table
+      const { error: dbError } = await supabase.from("registrations").insert([
+        {
+          full_name: formData.fullName.trim(),
+          phone: formData.phone.trim(),
+          telegram: formData.telegram.trim(),
+          email: formData.email.trim() || null,
+          niche: formData.niche,
+          experience: formData.experience,
+          payment_method: formData.paymentMethod,
+          payment_screenshot_url: screenshotUrl,
+          status: "pending",
+          created_at: new Date().toISOString(),
+        },
+      ]);
+
+      if (dbError) {
+        // Rollback uploaded screenshot if DB insert fails to keep storage clean
+        await supabase.storage.from("payment-screenshots").remove([filePath]);
+        throw new Error(`Registration database insert failed: ${dbError.message}`);
+      }
+
+      // 4. Show success screen and trigger confetti
       setIsSuccess(true);
       triggerConfetti();
-    }, 2000);
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "An unexpected error occurred. Please try again.";
+      setErrorMsg(message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
