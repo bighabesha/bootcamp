@@ -103,6 +103,10 @@ export default function RegistrationForm() {
       setErrorMsg("Telegram Username is required.");
       return;
     }
+    if (!formData.email.trim()) {
+      setErrorMsg("Email is required.");
+      return;
+    }
     if (!screenshot) {
       setErrorMsg("Payment screenshot upload is required.");
       return;
@@ -137,7 +141,7 @@ export default function RegistrationForm() {
           full_name: formData.fullName.trim(),
           phone: formData.phone.trim(),
           telegram: formData.telegram.trim(),
-          email: formData.email.trim() || null,
+          email: formData.email.trim(),
           niche: formData.niche,
           experience: formData.experience,
           payment_method: formData.paymentMethod,
@@ -320,11 +324,11 @@ export default function RegistrationForm() {
                       </div>
                     </div>
 
-                    {/* Email (Optional) */}
+                    {/* Email */}
                     <div className="space-y-2">
                       <label htmlFor="email" className="text-zinc-300 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
                         <Mail className="w-3.5 h-3.5 text-zinc-500" />
-                        <span>Email (Optional)</span>
+                        <span>Email *</span>
                       </label>
                       <input
                         type="email"

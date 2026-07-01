@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -9,10 +11,18 @@ import Comparison from "@/components/Comparison";
 import Faq from "@/components/Faq";
 import RegistrationForm from "@/components/RegistrationForm";
 import Footer from "@/components/Footer";
+import { useTheme } from "@/lib/ThemeContext";
 
 export default function Home() {
+  const { theme } = useTheme();
+
   return (
-    <div className="relative min-h-screen bg-zinc-950 font-sans selection:bg-brand-yellow selection:text-black antialiased text-zinc-100">
+    <div
+      className={`relative min-h-screen font-sans selection:bg-brand-yellow selection:text-black antialiased transition-colors duration-300 ${
+        theme === "dark" ? "text-zinc-100" : "text-zinc-900"
+      }`}
+      style={{ backgroundColor: "var(--background)" }}
+    >
       {/* Dynamic Navigation */}
       <Navbar />
 
@@ -34,11 +44,11 @@ export default function Home() {
       {/* Alignment Cards & Others vs Bootcamp Grid */}
       <Comparison />
 
-      {/* Accordion FAQ questions */}
-      <Faq />
-
       {/* Secured Payment and Registration details upload */}
       <RegistrationForm />
+
+      {/* Accordion FAQ questions */}
+      <Faq />
 
       {/* Footer credits and social connections */}
       <Footer />
