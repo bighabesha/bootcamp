@@ -256,9 +256,17 @@ export default function RegistrationForm() {
                   onSubmit={handleSubmit}
                   className="glass-panel border border-white/10 rounded-[32px] p-8 sm:p-10 space-y-6 shadow-2xl relative"
                 >
-                  <h3 className="text-2xl font-black text-white tracking-tight">
-                    Registration Form
-                  </h3>
+                  <div className="space-y-2 mb-2">
+                    <span className="text-brand-yellow text-xs font-black uppercase tracking-widest block">
+                      Secured Enrollment
+                    </span>
+                    <h3 className="text-2xl font-black text-white tracking-tight">
+                      Secure Your Spot Today
+                    </h3>
+                    <p className="text-zinc-400 text-sm font-light leading-relaxed">
+                      To maintain high-quality live interactions and support, slots for the bootcamp 2026 are strictly limited. Follow the bank details below to pay the registration fee, upload your transfer screenshot, and join the cohort.
+                    </p>
+                  </div>
 
                   {errorMsg && (
                     <div className="p-4 rounded-xl bg-red-950/20 border border-red-500/30 text-red-400 text-sm flex items-start gap-3">
