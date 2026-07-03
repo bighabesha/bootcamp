@@ -184,25 +184,27 @@ export default function RegistrationForm() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="grid grid-cols-1 lg:grid-cols-12 gap-16"
+              className="space-y-12"
             >
-              
-              {/* Left Column: Bank Details & Value Prop */}
-              <div className="lg:col-span-5 space-y-8 order-2 lg:order-1">
-                <div className="space-y-4">
-                  <span className="text-brand-yellow text-xs font-black uppercase tracking-widest block">
-                    Secured Enrollment
-                  </span>
-                  <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
-                    Secure Your Spot Today
-                  </h2>
-                  <p className="text-zinc-400 text-sm sm:text-base font-light leading-relaxed">
-                    To maintain high-quality live interactions and support, slots for the bootcamp 2026 are strictly limited. Follow the bank details below to pay the registration fee, upload your transfer screenshot, and join the cohort.
-                  </p>
-                </div>
+              {/* Common Header */}
+              <div className="text-center max-w-3xl mx-auto space-y-4 mb-8">
+                <span className="text-brand-yellow text-xs font-black uppercase tracking-widest block">
+                  Secured Enrollment
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+                  Secure Your Spot Today
+                </h2>
+                <p className="text-zinc-400 text-sm sm:text-base font-light leading-relaxed">
+                  To maintain high-quality live interactions and support, slots for the bootcamp 2026 are strictly limited. Follow the bank details below to pay the registration fee, upload your transfer screenshot, and join the cohort.
+                </p>
+              </div>
 
-                {/* Bank details cards */}
-                <div className="space-y-4 pt-4">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                
+                {/* Left Column: Bank Details & Value Prop */}
+                <div className="lg:col-span-5 space-y-8 order-2 lg:order-1">
+                  {/* Bank details cards */}
+                  <div className="space-y-4">
                   <h4 className="text-zinc-300 font-extrabold text-xs tracking-wider uppercase flex items-center gap-2">
                     <ShieldCheck className="w-4 h-4 text-brand-yellow" />
                     <span>How to pay (400 ETB):</span>
@@ -256,17 +258,9 @@ export default function RegistrationForm() {
                   onSubmit={handleSubmit}
                   className="glass-panel border border-white/10 rounded-[32px] p-8 sm:p-10 space-y-6 shadow-2xl relative"
                 >
-                  <div className="space-y-2 mb-2">
-                    <span className="text-brand-yellow text-xs font-black uppercase tracking-widest block">
-                      Secured Enrollment
-                    </span>
-                    <h3 className="text-2xl font-black text-white tracking-tight">
-                      Secure Your Spot Today
-                    </h3>
-                    <p className="text-zinc-400 text-sm font-light leading-relaxed">
-                      To maintain high-quality live interactions and support, slots for the bootcamp 2026 are strictly limited. Follow the bank details below to pay the registration fee, upload your transfer screenshot, and join the cohort.
-                    </p>
-                  </div>
+                  <h3 className="text-2xl font-black text-white tracking-tight">
+                    Registration Form
+                  </h3>
 
                   {errorMsg && (
                     <div className="p-4 rounded-xl bg-red-950/20 border border-red-500/30 text-red-400 text-sm flex items-start gap-3">
@@ -494,7 +488,8 @@ export default function RegistrationForm() {
                 </form>
               </div>
 
-            </motion.div>
+            </div>
+          </motion.div>
           ) : (
             <motion.div
               key="success-screen"
