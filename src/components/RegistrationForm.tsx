@@ -188,7 +188,7 @@ export default function RegistrationForm() {
             >
               
               {/* Left Column: Bank Details & Value Prop */}
-              <div className="lg:col-span-5 space-y-8">
+              <div className="lg:col-span-5 space-y-8 order-2 lg:order-1">
                 <div className="space-y-4">
                   <span className="text-brand-yellow text-xs font-black uppercase tracking-widest block">
                     Secured Enrollment
@@ -251,7 +251,7 @@ export default function RegistrationForm() {
               </div>
 
               {/* Right Column: Registration Form */}
-              <div className="lg:col-span-7">
+              <div className="lg:col-span-7 order-1 lg:order-2">
                 <form
                   onSubmit={handleSubmit}
                   className="glass-panel border border-white/10 rounded-[32px] p-8 sm:p-10 space-y-6 shadow-2xl relative"
