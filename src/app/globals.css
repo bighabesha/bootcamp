@@ -4,22 +4,22 @@
    DARK MODE (default)
 ────────────────────────────────────────────────── */
 :root {
-  --background: #111114;        /* Slightly lighter than pure zinc-950 */
-  --background-secondary: #18181b; /* Zinc-900 */
+  --background: #0B0B0B;        /* Premium deep black */
+  --background-secondary: #121212; /* Sleek dark grey */
   --foreground: #f4f4f5;        /* Zinc-100 */
   --foreground-muted: #a1a1aa;  /* Zinc-400 */
 
-  --brand-yellow: #facc15;
-  --brand-yellow-glow: rgba(250, 204, 21, 0.15);
+  --brand-yellow: #FFC107;      /* Premium Yellow accent */
+  --brand-yellow-glow: rgba(255, 193, 7, 0.15);
   --brand-purple: #a855f7;
   --brand-blue: #3b82f6;
   --brand-orange: #f97316;
 
-  --card-bg: rgba(28, 28, 32, 0.72);
-  --card-border: rgba(255, 255, 255, 0.09);
+  --card-bg: rgba(18, 18, 18, 0.72);
+  --card-border: rgba(255, 255, 255, 0.08);
 
-  --scrollbar-track: #111114;
-  --scrollbar-thumb: #27272a;
+  --scrollbar-track: #0B0B0B;
+  --scrollbar-thumb: #222222;
 }
 
 /* ──────────────────────────────────────────────────

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { supabase } from "@/lib/supabaseClient";
+import { supabaseAdmin } from "@/lib/supabaseAdmin";
 
 // Helper function to check if the password is correct
 function isAuthorized(request: Request): boolean {
@@ -25,7 +25,7 @@ export async function GET(request: Request) {
   }
 
   try {
-    const { data, error } = await supabase
+    const { data, error } = await supabaseAdmin
       .from("registrations")
       .select("*")
       .order("created_at", { ascending: false });
@@ -57,7 +57,7 @@ export async function POST(request: Request) {
 
     const status = action === "approve" ? "approved" : "rejected";
 
-    const { data, error } = await supabase
+    const { data, error } = await supabaseAdmin
       .from("registrations")
       .update({ status })
       .eq("id", id)
@@ -67,7 +67,15 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
 
-    return NextResponse.json({ success: true, registration: data?.[0] });
+    // Confirm the row was actually found and updated
+    if (!data || data.length === 0) {
+      return NextResponse.json(
+        { error: `No registration found with id: ${id}` },
+        { status: 404 }
+      );
+    }
+
+    return NextResponse.json({ success: true, registration: data[0] });
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Internal Server Error";
     return NextResponse.json({ error: message }, { status: 500 });
