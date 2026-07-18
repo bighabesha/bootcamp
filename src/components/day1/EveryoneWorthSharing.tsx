@@ -37,7 +37,7 @@ export default function EveryoneWorthSharing() {
             Everyone Has Something Worth Sharing.
           </h2>
           <p className="text-zinc-400 font-light text-sm sm:text-base">
-            You don't need a PhD or 20 years of experience. You just need to be one step ahead of the person you are helping.
+            You don&apos;t need a PhD or 20 years of experience. You just need to be one step ahead of the person you are helping.
           </p>
         </div>
 
@@ -82,10 +82,10 @@ export default function EveryoneWorthSharing() {
             {/* Glow backing */}
             <div className="absolute inset-0 bg-brand-yellow/2 rounded-3xl blur-sm" />
             <h3 className="text-lg sm:text-2xl font-black text-white relative z-10">
-              💡 "Every person knows something another person wants to learn."
+              💡 &quot;Every person knows something another person wants to learn.&quot;
             </h3>
             <p className="text-xs sm:text-sm text-zinc-400 mt-2 font-light relative z-10">
-              Your normal is someone else's breakthrough. Content creation is simply building the bridge.
+              Your normal is someone else&apos;s breakthrough. Content creation is simply building the bridge.
             </p>
           </motion.div>
         </div>

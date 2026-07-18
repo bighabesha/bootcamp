@@ -98,7 +98,7 @@ export default function MyStoryTimeline() {
             How I built my creator career.
           </h2>
           <p className="text-zinc-400 font-light text-sm sm:text-base">
-            I wasn't born with thousands of followers. Here is the realistic roadmap of how I went from clueless student to full-time creator.
+            I wasn&apos;t born with thousands of followers. Here is the realistic roadmap of how I went from clueless student to full-time creator.
           </p>
         </div>
 

@@ -21,7 +21,7 @@ export default function ViralVsSuccess() {
             Viral Does NOT Equal Success
           </h2>
           <p className="text-zinc-400 font-light text-sm sm:text-base">
-            Most beginners think the goal is a viral video. It isn't. The goal is building a trust-based system that works.
+            Most beginners think the goal is a viral video. It isn&apos;t. The goal is building a trust-based system that works.
           </p>
         </div>
 

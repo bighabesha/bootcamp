@@ -38,7 +38,7 @@ export default function FinalCTA({ onContinueClick }: FinalCTAProps) {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.1] max-w-3xl"
         >
-          “Five years from now, you'll either wish you had started today—or you'll be grateful that you did.”
+          &ldquo;Five years from now, you&apos;ll either wish you had started today&mdash;or you&apos;ll be grateful that you did.&rdquo;
         </motion.h2>
 
         {/* Secondary Subtitle */}

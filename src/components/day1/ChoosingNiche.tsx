@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Heart, Star, Compass, DollarSign, Lightbulb } from "lucide-react";
+import { Heart, Star, Compass, DollarSign } from "lucide-react";
 
 const nicheExamples = [
   {
@@ -130,7 +130,7 @@ export default function ChoosingNiche() {
                   <span className="text-xs font-bold text-red-400 uppercase tracking-widest">Circle 1</span>
                   <h3 className="text-2xl font-black text-white">Things You Love (Passions)</h3>
                   <p className="text-sm text-zinc-400 font-light leading-relaxed">
-                    Topics you read about, think about, and discuss for free. Passions are essential because they prevent burnout during the initial phase when you get zero views. If you don't love it, you won't survive the grind.
+                    Topics you read about, think about, and discuss for free. Passions are essential because they prevent burnout during the initial phase when you get zero views. If you don&apos;t love it, you won&apos;t survive the grind.
                   </p>
                 </motion.div>
               )}
@@ -144,9 +144,9 @@ export default function ChoosingNiche() {
                   className="space-y-4"
                 >
                   <span className="text-xs font-bold text-blue-400 uppercase tracking-widest">Circle 2</span>
-                  <h3 className="text-2xl font-black text-white">Things You're Good At (Skills)</h3>
+                  <h3 className="text-2xl font-black text-white">Things You&apos;re Good At (Skills)</h3>
                   <p className="text-sm text-zinc-400 font-light leading-relaxed">
-                    Your professional education, career skills, hobbies, or unique lived experiences. Even if you're not an expert, you just need to know more than the person you are teaching.
+                    Your professional education, career skills, hobbies, or unique lived experiences. Even if you&apos;re not an expert, you just need to know more than the person you are teaching.
                   </p>
                 </motion.div>
               )}

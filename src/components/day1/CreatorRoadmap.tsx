@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { 
-  Lightbulb, Compass, Target, Play, Video, Users, 
+  Lightbulb, Compass, Play, Video, Users, 
   Heart, DollarSign, Briefcase, Star 
 } from "lucide-react";
 

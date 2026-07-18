@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { Star, Eye, Users, ShieldCheck, Heart, Sparkles, Globe } from "lucide-react";
+import { Star, Users } from "lucide-react";
 
 const successCreators = [
   // Global
@@ -121,7 +121,7 @@ export default function SuccessStories() {
           {["global", "ethiopian", "instructor"].map((tab) => (
             <button
               key={tab}
-              onClick={() => setActiveTab(tab as any)}
+              onClick={() => setActiveTab(tab as "global" | "ethiopian" | "instructor")}
               className={`px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider transition-all border cursor-pointer ${
                 activeTab === tab
                   ? "bg-brand-yellow border-brand-yellow text-black shadow-lg shadow-brand-yellow/10"

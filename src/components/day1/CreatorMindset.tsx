@@ -74,7 +74,7 @@ export default function CreatorMindset() {
                   <Sparkles className="w-4 h-4" />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-black text-white leading-tight group-hover:text-brand-yellow transition-colors">
-                  "{item.quote}"
+                  &quot;{item.quote}&quot;
                 </h3>
               </div>
 

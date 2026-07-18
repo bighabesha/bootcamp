@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ShieldAlert, AlertTriangle, ChevronDown, Award, Ban, Zap, Hourglass, Trash2, Frown } from "lucide-react";
+import { ShieldAlert, AlertTriangle, ChevronDown, Ban, Zap, Hourglass, Trash2, Frown } from "lucide-react";
 
 const warningCards = [
   {
@@ -72,7 +72,7 @@ export default function WhoIsNotFor() {
             Who This Bootcamp Is NOT For
           </h2>
           <p className="text-zinc-400 font-light text-sm sm:text-base">
-            Before we go further, let's be fully honest. If you align with any of these traits, this bootcamp is a wrong fit for you. Save your time and focus.
+            Before we go further, let&apos;s be fully honest. If you align with any of these traits, this bootcamp is a wrong fit for you. Save your time and focus.
           </p>
         </div>
 

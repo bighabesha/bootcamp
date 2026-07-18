@@ -112,7 +112,7 @@ export default function WhyBestSkill() {
                 </div>
 
                 <div className="space-y-4">
-                  <p className="text-sm font-semibold text-brand-yellow">"{selectedSkill.short}"</p>
+                  <p className="text-sm font-semibold text-brand-yellow">&quot;{selectedSkill.short}&quot;</p>
                   <p className="text-xs sm:text-sm text-zinc-300 font-light leading-relaxed">
                     {selectedSkill.long}
                   </p>

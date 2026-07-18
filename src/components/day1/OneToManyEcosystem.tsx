@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { 
-  Play, Video, Globe, GraduationCap, Mic, Mail, Briefcase, Share2 
+  Play, Video, Globe, GraduationCap, Mic, Mail, Briefcase
 } from "lucide-react";
 
 // Platform SVG Icons

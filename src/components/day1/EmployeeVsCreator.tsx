@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Info, Briefcase, Sparkles, Compass, ShieldAlert, Award, Globe, Heart } from "lucide-react";
+import { Info, Briefcase, Sparkles, Compass, Award, Globe, Heart } from "lucide-react";
 
 const comparisonData = [
   {

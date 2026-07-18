@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { CheckSquare, Square, Award, Sparkles, RefreshCw } from "lucide-react";
+import { CheckSquare, Square, Award, RefreshCw } from "lucide-react";
 import confetti from "canvas-confetti";
 
 const homeworkTasks = [

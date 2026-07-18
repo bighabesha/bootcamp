@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Flame, Trees, Crown, Factory, Cpu, Globe, Share2, Sparkles, Rocket, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -18,7 +18,6 @@ const revolutions = [
 
 export default function HistoryRevolutions() {
   const [activeIdx, setActiveIdx] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
 
   const handleNext = () => {
     if (activeIdx < revolutions.length - 1) {
