@@ -4,11 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Menu, X, Rocket, Sun, Moon } from "lucide-react";
 import { useTheme } from "@/lib/ThemeContext";
 
-interface NavbarProps {
-  onRegisterClick: () => void;
-}
-
-export default function Navbar({ onRegisterClick }: NavbarProps) {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
@@ -54,14 +50,6 @@ export default function Navbar({ onRegisterClick }: NavbarProps) {
       ? "font-extrabold text-lg tracking-wider text-white group-hover:text-brand-yellow transition-colors duration-300"
       : "font-extrabold text-lg tracking-wider text-zinc-900 group-hover:text-brand-yellow transition-colors duration-300";
 
-  const menuItems = [
-    { id: "welcome", label: "welcome" },
-    { id: "story", label: "my story" },
-    { id: "comparison", label: "before vs after" },
-    { id: "niche", label: "niche" },
-    { id: "homework", label: "homework" }
-  ];
-
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg}`}>
@@ -81,13 +69,13 @@ export default function Navbar({ onRegisterClick }: NavbarProps) {
 
             {/* Desktop Navigation Links */}
             <div className="hidden md:flex items-center gap-8">
-              {menuItems.map((item) => (
+              {["about", "course", "bonus", "faq"].map((item) => (
                 <button
-                  key={item.id}
-                  onClick={() => handleScrollTo(item.id)}
+                  key={item}
+                  onClick={() => handleScrollTo(item)}
                   className={linkClass}
                 >
-                  {item.label}
+                  {item === "faq" ? "FAQ" : item}
                 </button>
               ))}
             </div>
@@ -112,7 +100,7 @@ export default function Navbar({ onRegisterClick }: NavbarProps) {
               </button>
 
               <button
-                onClick={onRegisterClick}
+                onClick={() => handleScrollTo("register")}
                 className="relative px-6 py-2.5 rounded-full text-sm font-bold text-black bg-brand-yellow hover:bg-white transition-all duration-300 cursor-pointer shadow-lg shadow-brand-yellow/10 hover:shadow-white/10 hover:scale-105 active:scale-95"
               >
                 Register Now
@@ -158,22 +146,19 @@ export default function Navbar({ onRegisterClick }: NavbarProps) {
                 : "bg-white border-black/5"
             }`}
           >
-            {menuItems.map((item) => (
+            {["about", "course", "bonus", "faq"].map((item) => (
               <button
-                key={item.id}
-                onClick={() => handleScrollTo(item.id)}
+                key={item}
+                onClick={() => handleScrollTo(item)}
                 className={`block w-full text-left py-2 text-base font-semibold capitalize transition-colors cursor-pointer hover:text-brand-yellow ${
                   theme === "dark" ? "text-zinc-300" : "text-zinc-600"
                 }`}
               >
-                {item.label}
+                {item === "faq" ? "FAQ" : item}
               </button>
             ))}
             <button
-              onClick={() => {
-                setIsOpen(false);
-                onRegisterClick();
-              }}
+              onClick={() => handleScrollTo("register")}
               className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-center text-base font-bold text-black bg-brand-yellow cursor-pointer"
             >
               <Rocket className="w-5 h-5" />
@@ -186,7 +171,7 @@ export default function Navbar({ onRegisterClick }: NavbarProps) {
       {/* Sticky Mobile CTA */}
       <div className="md:hidden fixed bottom-6 left-0 right-0 z-40 px-4 flex justify-center pointer-events-none">
         <button
-          onClick={onRegisterClick}
+          onClick={() => handleScrollTo("register")}
           className="pointer-events-auto w-full max-w-sm flex items-center justify-center gap-2 py-4 px-6 rounded-2xl text-base font-bold text-black bg-brand-yellow shadow-xl shadow-brand-yellow/20 border border-brand-yellow/30 hover:scale-105 active:scale-95 transition-all duration-200"
         >
           <Rocket className="w-5 h-5 animate-pulse" />
