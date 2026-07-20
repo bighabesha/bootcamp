@@ -178,7 +178,7 @@ export default function Hero() {
 
               {/* Price */}
               <div className="mb-2">
-                <span className="text-3xl sm:text-4xl font-black text-white tracking-tight">400 ETB</span>
+                <span className="text-3xl sm:text-4xl font-black text-white tracking-tight">500 ETB</span>
                 <span className="text-zinc-400 text-xs font-semibold block mt-0.5">One-Time Registration Fee</span>
               </div>
 

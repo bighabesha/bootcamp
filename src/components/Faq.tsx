@@ -31,11 +31,11 @@ export default function Faq() {
     },
     {
       question: "How do I register?",
-      answer: "To register, scroll down to the Registration Section below. Fill out the application form with your details (Name, Phone, Telegram Username, Niche, and Experience) and upload a screenshot of your 400 ETB payment transfer receipt. Once submitted, our team will review and approve your registration.",
+      answer: "To register, scroll down to the Registration Section below. Fill out the application form with your details (Name, Phone, Telegram Username, Niche, and Experience) and upload a screenshot of your 500 ETB payment transfer receipt. Once submitted, our team will review and approve your registration.",
     },
     {
       question: "How do I pay?",
-      answer: "We accept payments via major Ethiopian bank transfers (CBE, Telebirr, or Awash). Bank details and transfer instructions are displayed directly inside the Registration Form section. Simply make the transfer of 400 ETB, take a screenshot of the success page, and upload it with your registration.",
+      answer: "We accept payments via major Ethiopian bank transfers (CBE, Telebirr, or Awash). Bank details and transfer instructions are displayed directly inside the Registration Form section. Simply make the transfer of 500 ETB, take a screenshot of the success page, and upload it with your registration.",
     },
     {
       question: "When does the bootcamp start?",

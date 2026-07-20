@@ -175,7 +175,7 @@ export default function Navbar() {
           className="pointer-events-auto w-full max-w-sm flex items-center justify-center gap-2 py-4 px-6 rounded-2xl text-base font-bold text-black bg-brand-yellow shadow-xl shadow-brand-yellow/20 border border-brand-yellow/30 hover:scale-105 active:scale-95 transition-all duration-200"
         >
           <Rocket className="w-5 h-5 animate-pulse" />
-          Register for Bootcamp - 400 ETB
+          Register for Bootcamp - 500 ETB
         </button>
       </div>
     </>

@@ -429,7 +429,7 @@ export default function AdminDashboard() {
                         {/* Payment Details */}
                         <td className="py-5 px-6">
                           <span className="text-zinc-300 font-extrabold capitalize block">{reg.payment_method}</span>
-                          <span className="text-[10px] text-zinc-500 block mt-0.5 uppercase tracking-wide">400 ETB Fee</span>
+                          <span className="text-[10px] text-zinc-500 block mt-0.5 uppercase tracking-wide">500 ETB Fee</span>
                         </td>
 
                         {/* Screenshot */}
@@ -555,7 +555,7 @@ export default function AdminDashboard() {
                       <div className="space-y-1">
                         <span className="text-zinc-500 font-medium uppercase tracking-wider block">Payment method</span>
                         <span className="text-zinc-300 font-semibold block capitalize">{reg.payment_method}</span>
-                        <span className="text-[10px] text-zinc-500">400 ETB</span>
+                        <span className="text-[10px] text-zinc-500">500 ETB</span>
                       </div>
 
                       <div className="space-y-1">

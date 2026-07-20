@@ -207,7 +207,7 @@ export default function RegistrationForm() {
                   <div className="space-y-4">
                   <h4 className="text-zinc-300 font-extrabold text-xs tracking-wider uppercase flex items-center gap-2">
                     <ShieldCheck className="w-4 h-4 text-brand-yellow" />
-                    <span>How to pay (400 ETB):</span>
+                    <span>How to pay (500 ETB):</span>
                   </h4>
 
                   <div className="space-y-3">

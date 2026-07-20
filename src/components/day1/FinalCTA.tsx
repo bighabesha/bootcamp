@@ -72,7 +72,7 @@ export default function FinalCTA({ onContinueClick }: FinalCTAProps) {
         {/* Small trust/security badge */}
         <div className="flex items-center gap-2 text-zinc-600 text-xs font-mono pt-4 select-none">
           <ShieldCheck className="w-4 h-4 text-zinc-600" />
-          <span>Unlock Days 2-5 (400 ETB One-time payment)</span>
+          <span>Unlock Days 2-5 (500 ETB One-time payment)</span>
         </div>
 
       </div>
